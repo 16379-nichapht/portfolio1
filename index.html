@@ -1,198 +1,87 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | หน้าหลัก</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Kanit',sans-serif;
-        }
-
-        body{
-            background:#f5f7fb;
-            color:#333;
-        }
-
-        nav{
-            width:100%;
-            background:#0f172a;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:18px 8%;
-            position:fixed;
-            top:0;
-            left:0;
-        }
-
-        nav h2{
-            color:white;
-        }
-
-        nav ul{
-            display:flex;
-            list-style:none;
-            gap:25px;
-        }
-
-        nav a{
-            color:white;
-            text-decoration:none;
-            transition:.3s;
-        }
-
-        nav a:hover{
-            color:#38bdf8;
-        }
-
-        .hero{
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            gap:70px;
-            padding:120px 8% 50px;
-            flex-wrap:wrap;
-        }
-
-        .hero img{
-            width:300px;
-            height:300px;
-            border-radius:50%;
-            object-fit:cover;
-            border:8px solid white;
-            box-shadow:0 10px 30px rgba(0,0,0,.15);
-        }
-
-        .hero-text{
-            max-width:600px;
-        }
-
-        .hero-text h3{
-            color:#2563eb;
-        }
-
-        .hero-text h1{
-            font-size:50px;
-            margin:10px 0;
-        }
-
-        .hero-text p{
-            line-height:1.8;
-            margin:20px 0;
-        }
-
-        .btn{
-            display:inline-block;
-            padding:12px 28px;
-            background:#2563eb;
-            color:white;
-            text-decoration:none;
-            border-radius:10px;
-            transition:.3s;
-        }
-
-        .btn:hover{
-            background:#1d4ed8;
-        }
-
-        footer{
-            text-align:center;
-            padding:20px;
-            background:#0f172a;
-            color:white;
-        }
-
-        @media(max-width:768px){
-
-            nav{
-                flex-direction:column;
-                gap:15px;
-            }
-
-            nav ul{
-                flex-wrap:wrap;
-                justify-content:center;
-            }
-
-            .hero{
-                text-align:center;
-            }
-
-            .hero h1{
-                font-size:38px;
-            }
-
-            .hero img{
-                width:230px;
-                height:230px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio ของ กรเอก มหาโภคินวงษ์</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<nav>
-
-<h2>My Portfolio</h2>
-
-<ul>
-
-<li><a href="index.html">หน้าหลัก</a></li>
-<li><a href="education.html">ประวัติการศึกษา</a></li>
-<li><a href="about.html">ประวัติส่วนตัว</a></li>
-<li><a href="portfolio.html">ผลงาน</a></li>
-<li><a href="contact.html">ติดต่อ</a></li>
-
-</ul>
-
+ 
+<nav class="topnav">
+  <div class="brand">
+    <span class="brand-badge">OQ</span>
+    กรเอก มหาโภคินวงษ์
+  </div>
+  <button class="nav-toggle" aria-label="เปิดเมนู">&#9776;</button>
+  <ul class="navlinks">
+    <li><a href="index.html" aria-current="page">หน้าหลัก</a></li>
+    <li><a href="personal.html">ประวัติส่วนตัว</a></li>
+    <li><a href="education.html">ประวัติการศึกษา</a></li>
+    <li><a href="activities.html">ผลงาน</a></li>
+    <li><a href="contact.html">ติดต่อ</a></li>
+  </ul>
 </nav>
-
-
-<section class="hero">
-
-<img src="images/profile.jpg" alt="Profile">
-
-<div class="hero-text">
-
-<h3>สวัสดีค่ะ ยินดีต้อนรับ</h3>
-
-<h1>ณิชาภัทร จันทนาม</h1>
-
-<p>
-ฉันเป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6
-เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมข้อมูลเกี่ยวกับ
-ประวัติส่วนตัว ประวัติการศึกษา ผลงาน และกิจกรรมต่าง ๆ
-เพื่อใช้เป็นแฟ้มสะสมผลงาน (Portfolio)
-สำหรับการศึกษาต่อและการนำเสนอผลงานของตนเอง
-</p>
-
-<a href="about.html" class="btn">รู้จักฉันเพิ่มเติม</a>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>© 2026 My Portfolio | Created by Your Name</p>
-
-</footer>
-
+ 
+<main>
+  <section class="hero">
+    <div>
+      <h1>Portfolio of <br><span class="accent">Gornerk Mahapokinwong</h1>
+      <p class="lede">นักเรียนชั้นมัธยมศึกษาปีที่ 6 เว็บไซต์นี้รวบรวมประวัติส่วนตัว ประวัติการศึกษา และผลงานของผมไว้ในที่เดียว เพื่อใช้แนะนำตัวสำหรับการศึกษาต่อและโอกาสต่างๆ</p>
+      <div class="hero-cta">
+        <a href="personal.html" class="btn btn-solid">ดูประวัติส่วนตัว</a>
+        <a href="contact.html" class="btn btn-ghost">ช่องการติดต่อ</a>
+      </div>
+    </div>
+ 
+    <div class="id-card">
+      <div class="id-card-top">
+        <span class="school">STUDENT PORTFOLIO ID</span>
+        <span class="gold-dot"></span>
+      </div>
+      <div class="id-card-body">
+        <div class="id-photo">
+          <!-- เปลี่ยนรูปได้ที่ personal.html -->
+          <span>รูปนักเรียน</span>
+        </div>
+        <div class="id-info">
+          <div class="name">กรเอก มหาโภคินวงษ์</div>
+          <div class="role">ชั้นมัธยมศึกษาปีที่ 6</div>
+          <div class="role">ชื่อเล่น: โอคิว</div>
+        </div>
+      </div>
+      <div class="id-card-strip"></div>
+    </div>
+  </section>
+ 
+  <section>
+    <div class="grid-links">
+      <a class="link-card" href="personal.html">
+        <span class="num">01</span>
+        <h3>ประวัติส่วนตัว</h3>
+        <p>ข้อมูลทั่วไปและรูปภาพของผม</p>
+      </a>
+      <a class="link-card" href="education.html">
+        <span class="num">02</span>
+        <h3>ประวัติการศึกษา</h3>
+        <p>เส้นทางการเรียนตั้งแต่อดีตถึงปัจจุบัน</p>
+      </a>
+      <a class="link-card" href="activities.html">
+        <span class="num">03</span>
+        <h3>ผลงาน</h3>
+        <p>ผลงานและกิจกรรมที่เคยทำ</p>
+      </a>
+      <a class="link-card" href="contact.html">
+        <span class="num">04</span>
+        <h3>ติดต่อ</h3>
+        <p>ช่องทางการติดต่อผม</p>
+      </a>
+    </div>
+  </section>
+</main>
+ 
+<footer>&copy; 2026 กรเอก มหาโภคินวงษ์ — Portfolio Website</footer>
+ 
+<script src="script.js"></script>
 </body>
 </html>
