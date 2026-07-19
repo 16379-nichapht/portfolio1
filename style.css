@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&family=Sarabun:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj:wght@300;400;500;600&family=Charmonman:wght@400;700&family=Sarabun:wght@300;400;500&display=swap');
 
 :root {
-  --teal: #1F4E45;
-  --teal-dark: #14332C;
-  --gold: #D9A441;
-  --gold-light: #F0C876;
-  --bg: #F3F1E8;
+  --cream: #FFF6F0;
+  --blush: #FBE4EC;
+  --rose: #D6336C;
+  --rose-deep: #8F2749;
+  --gold: #C9A227;
+  --gold-light: #F3E3B0;
   --card: #FFFFFF;
-  --ink: #182420;
-  --ink-soft: #4A5952;
-  --line: #DAD5C4;
-  --radius: 14px;
+  --ink: #3B2430;
+  --ink-soft: #8C6478;
+  --line: #F0D3DE;
+  --radius: 16px;
 }
 
 * { box-sizing: border-box; }
@@ -19,17 +20,23 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--cream);
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, rgba(201,162,39,0.35) 0, transparent 60%),
+    radial-gradient(2px 2px at 80% 10%, rgba(201,162,39,0.3) 0, transparent 60%),
+    radial-gradient(1.5px 1.5px at 60% 70%, rgba(214,51,108,0.2) 0, transparent 60%),
+    radial-gradient(2px 2px at 30% 85%, rgba(201,162,39,0.28) 0, transparent 60%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: 'Sarabun', sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
+  font-weight: 300;
+  line-height: 1.75;
 }
 
 h1, h2, h3, .display {
-  font-family: 'Kanit', sans-serif;
-  font-weight: 600;
-  color: var(--teal-dark);
+  font-family: 'Taviraj', serif;
+  font-weight: 500;
+  color: var(--rose-deep);
   margin: 0;
 }
 
@@ -44,34 +51,37 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: space-between;
   padding: 14px 6vw;
-  background: var(--teal);
+  background: linear-gradient(120deg, var(--rose-deep), var(--rose));
   color: #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 18px rgba(143,39,73,0.28);
+  border-bottom: 2px solid var(--gold);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Taviraj', serif;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: #fff;
 }
 
 .brand-badge {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: var(--gold);
-  color: var(--teal-dark);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, var(--gold-light), var(--gold));
+  color: var(--rose-deep);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
+  font-size: 1rem;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.6);
 }
+
+.brand-badge::before { content: '\265B'; }
 
 .navlinks {
   display: flex;
@@ -79,26 +89,26 @@ a { color: inherit; text-decoration: none; }
   list-style: none;
   margin: 0;
   padding: 0;
+  font-family: 'Taviraj', serif;
 }
 
 .navlinks a {
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 999px;
   font-size: 0.92rem;
-  color: rgba(255,255,255,0.85);
-  transition: background 0.2s, color 0.2s;
+  color: rgba(255,255,255,0.88);
+  transition: background 0.25s, color 0.25s;
   white-space: nowrap;
 }
 
-.navlinks a:hover,
-.navlinks a[aria-current="page"] {
-  background: rgba(255,255,255,0.12);
+.navlinks a:hover {
+  background: rgba(255,255,255,0.14);
   color: #fff;
 }
 
 .navlinks a[aria-current="page"] {
   background: var(--gold);
-  color: var(--teal-dark);
+  color: var(--rose-deep);
   font-weight: 600;
 }
 
@@ -119,7 +129,7 @@ a { color: inherit; text-decoration: none; }
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--teal-dark);
+    background: var(--rose-deep);
     padding: 10px 6vw 16px;
     display: none;
     gap: 2px;
@@ -130,52 +140,63 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Page shell ---------- */
 main {
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 56px 6vw 80px;
 }
 
 .page-header {
   margin-bottom: 40px;
-  border-bottom: 3px solid var(--gold);
-  padding-bottom: 14px;
+  padding-bottom: 18px;
+  position: relative;
+}
+
+.page-header::after {
+  content: '\2726';
+  display: block;
+  margin-top: 14px;
+  text-align: left;
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 14px;
 }
 
 .eyebrow {
-  font-family: 'Kanit', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 2px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 6px;
+  font-family: 'Charmonman', cursive;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--rose);
+  margin-bottom: 4px;
   display: block;
 }
 
-.page-header h1 { font-size: 2rem; }
+.page-header h1 { font-size: 2.1rem; }
 
-/* ---------- Hero (index page): Student ID card ---------- */
+/* ---------- Hero (index page) ---------- */
 .hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
   align-items: center;
-  padding: 64px 0 48px;
+  padding: 68px 0 60px;
 }
 
 @media (max-width: 780px) {
-  .hero { grid-template-columns: 1fr; padding-top: 40px; }
+  .hero { grid-template-columns: 1fr; padding-top: 40px; text-align: center; }
+  .hero-cta { justify-content: center; }
+  .id-card { margin: 0 auto; }
 }
 
 .hero h1 {
-  font-size: clamp(2.1rem, 5vw, 3rem);
-  line-height: 1.25;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.3;
 }
 
-.hero .accent { color: var(--gold); }
+.hero .accent { color: var(--rose); }
 
 .hero p.lede {
   color: var(--ink-soft);
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   margin-top: 18px;
   max-width: 46ch;
 }
@@ -188,115 +209,126 @@ main {
 }
 
 .btn {
-  font-family: 'Kanit', sans-serif;
-  font-size: 0.92rem;
-  padding: 12px 22px;
+  font-family: 'Taviraj', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 12px 26px;
   border-radius: 999px;
-  border: 2px solid var(--teal);
-  transition: transform 0.15s, background 0.2s, color 0.2s;
+  border: 1.5px solid var(--gold);
+  transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
   display: inline-block;
 }
 
-.btn-solid { background: var(--teal); color: #fff; }
-.btn-solid:hover { background: var(--teal-dark); transform: translateY(-2px); }
-.btn-ghost { color: var(--teal); }
-.btn-ghost:hover { background: var(--teal); color: #fff; transform: translateY(-2px); }
+.btn-solid { background: linear-gradient(120deg, var(--rose), var(--rose-deep)); color: #fff; }
+.btn-solid:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(143,39,73,0.3); }
+.btn-ghost { color: var(--rose-deep); background: #fff; }
+.btn-ghost:hover { background: var(--gold-light); transform: translateY(-3px); }
 
-/* Student ID card visual */
-.id-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: 0 18px 40px rgba(20,51,44,0.18);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  transform: rotate(-2deg);
-  transition: transform 0.3s;
+/* Ornate corner-frame mixin (used on cards) */
+.ornate {
+  position: relative;
 }
-.id-card:hover { transform: rotate(0deg); }
-
-.id-card-top {
-  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-  color: #fff;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.id-card-top .school {
-  font-family: 'Kanit', sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 1px;
-}
-
-.id-card-top .gold-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--gold);
-}
-
-.id-card-body {
-  display: flex;
-  gap: 18px;
-  padding: 22px 20px;
-  align-items: center;
-}
-
-.id-photo {
-  width: 88px;
-  height: 108px;
-  border-radius: 8px;
-  background: var(--bg);
+.ornate::before, .ornate::after,
+.ornate .corner-tl, .ornate .corner-br {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
   border: 2px solid var(--gold);
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Kanit', sans-serif;
-  color: var(--ink-soft);
-  font-size: 0.75rem;
+  pointer-events: none;
+}
+.ornate::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.ornate::after   { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+/* ---------- Royal medallion ID card ---------- */
+.id-card {
+  position: relative;
+  width: 260px;
+  padding: 22px 20px 26px;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 24px 48px rgba(143,39,73,0.22);
+  border: 1px solid var(--line);
   text-align: center;
 }
 
-.id-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-.id-info .name { font-family: 'Kanit', sans-serif; font-weight: 600; font-size: 1.15rem; color: var(--teal-dark); }
-.id-info .role { color: var(--ink-soft); font-size: 0.9rem; margin-top: 4px; }
-.id-card-strip {
-  height: 8px;
-  background: repeating-linear-gradient(45deg, var(--gold), var(--gold) 10px, var(--gold-light) 10px, var(--gold-light) 20px);
+.id-photo-frame {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(from 180deg, var(--gold), var(--gold-light), var(--gold), var(--rose), var(--gold));
 }
 
-/* ---------- Nav cards on index ---------- */
+.id-photo-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  background: var(--blush);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.id-photo-inner img { width: 100%; height: 100%; object-fit: cover; }
+
+.id-photo-inner span {
+  font-family: 'Sarabun', sans-serif;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0 14px;
+}
+
+.id-card .name { font-family: 'Taviraj', serif; font-weight: 600; font-size: 1.2rem; color: var(--rose-deep); }
+.id-card .role { color: var(--ink-soft); font-size: 0.88rem; margin-top: 4px; }
+
+.id-ribbon {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--gold);
+  color: var(--rose-deep);
+  font-family: 'Taviraj', serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  padding: 5px 16px;
+  border-radius: 999px;
+}
+
+/* ---------- Waypoint cards on index ---------- */
 .grid-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 18px;
-  margin-top: 40px;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .link-card {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 22px;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  padding: 24px 22px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
 .link-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(20,51,44,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(143,39,73,0.16);
   border-color: var(--gold);
 }
 
 .link-card .num {
-  font-family: 'Kanit', sans-serif;
-  color: var(--gold);
+  font-family: 'Charmonman', cursive;
+  color: var(--rose);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1.1rem;
 }
 
-.link-card h3 { margin-top: 8px; font-size: 1.15rem; }
+.link-card h3 { margin-top: 6px; font-size: 1.15rem; }
 .link-card p { color: var(--ink-soft); font-size: 0.9rem; margin: 8px 0 0; }
 
 /* ---------- Content sections ---------- */
@@ -304,119 +336,128 @@ main {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 28px 30px;
+  padding: 32px 34px;
   margin-bottom: 22px;
 }
 
 .profile-block {
   display: flex;
-  gap: 26px;
+  gap: 28px;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
 .profile-photo {
-  width: 160px;
-  height: 200px;
+  width: 170px;
+  height: 210px;
   border-radius: 10px;
-  border: 3px solid var(--gold);
+  border: 4px solid var(--gold);
   object-fit: cover;
-  background: var(--bg);
+  background: var(--blush);
   flex-shrink: 0;
+  box-shadow: 0 14px 28px rgba(143,39,73,0.18);
 }
 
 dl.info-list {
   display: grid;
   grid-template-columns: max-content 1fr;
-  gap: 10px 20px;
+  gap: 12px 22px;
   margin: 0;
 }
 dl.info-list dt {
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Taviraj', serif;
   color: var(--ink-soft);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 dl.info-list dd {
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* ---------- Timeline (education) ---------- */
+/* ---------- Timeline (education) — a strand of pearls ---------- */
 .timeline {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-left: 3px solid var(--gold);
+  border-left: 2px solid var(--gold-light);
 }
 
 .timeline li {
   position: relative;
-  padding: 4px 0 28px 26px;
+  padding: 4px 0 30px 30px;
 }
 
 .timeline li::before {
   content: '';
   position: absolute;
-  left: -9px;
+  left: -8px;
   top: 6px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--teal);
-  border: 3px solid var(--gold);
+  background: radial-gradient(circle at 32% 28%, #fff, var(--gold-light));
+  border: 2px solid var(--gold);
 }
 
 .timeline .year {
-  font-family: 'Kanit', sans-serif;
-  color: var(--gold);
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-family: 'Charmonman', cursive;
+  color: var(--rose);
+  font-weight: 700;
+  font-size: 1.05rem;
   display: block;
 }
 
 .timeline h3 { margin-top: 4px; font-size: 1.1rem; }
 .timeline p { color: var(--ink-soft); margin: 6px 0 0; font-size: 0.95rem; }
 
-/* ---------- Works / activities grid ---------- */
+/* ---------- Works / activities ---------- */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  gap: 24px;
+}
+
+.work-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
 }
 
 .work-card .thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 10px;
-  background: var(--bg);
-  border: 1px dashed var(--line);
+  overflow: hidden;
+  background: var(--blush);
+  border: 3px solid var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--ink-soft);
   font-size: 0.85rem;
-  overflow: hidden;
   margin-bottom: 14px;
 }
-.work-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
-.work-card h3 { font-size: 1.05rem; }
+.work-card .thumb img { width: 100%; height: 100%; object-fit: contain; }
+.work-card h3 { font-size: 1.08rem; }
 .work-card p { color: var(--ink-soft); font-size: 0.9rem; margin: 6px 0 0; }
 .work-card .tag {
   display: inline-block;
   margin-top: 10px;
-  font-family: 'Kanit', sans-serif;
-  font-size: 0.72rem;
-  color: var(--teal);
-  background: rgba(31,78,69,0.08);
-  padding: 4px 10px;
+  font-family: 'Taviraj', serif;
+  font-size: 0.75rem;
+  color: var(--rose-deep);
+  background: var(--blush);
+  padding: 4px 12px;
   border-radius: 999px;
+  border: 1px solid var(--gold-light);
 }
 
 /* ---------- Contact ---------- */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 
 .contact-item {
@@ -426,27 +467,28 @@ dl.info-list dd {
 }
 
 .contact-icon {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: var(--teal);
+  background: radial-gradient(circle at 32% 28%, var(--rose), var(--rose-deep));
   color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Taviraj', serif;
   font-weight: 700;
   flex-shrink: 0;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.3);
 }
 
 .contact-item .label {
   font-size: 0.82rem;
   color: var(--ink-soft);
 }
-.contact-item .value { font-weight: 600; }
+.contact-item .value { font-weight: 500; }
 
 .note {
-  background: rgba(217,164,65,0.12);
+  background: var(--blush);
   border: 1px dashed var(--gold);
   border-radius: 10px;
   padding: 14px 18px;
@@ -462,12 +504,21 @@ footer {
   font-size: 0.85rem;
 }
 
+footer::before {
+  content: '\2726 \2726 \2726';
+  display: block;
+  color: var(--gold);
+  margin-bottom: 10px;
+  letter-spacing: 10px;
+  font-size: 0.7rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
   html { scroll-behavior: auto; }
 }
 
 a:focus-visible, button:focus-visible {
-  outline: 3px solid var(--gold);
+  outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
